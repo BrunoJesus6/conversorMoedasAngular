@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Lista de Moedas</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Pesquisar Moeda</mat-label>
+    <input matInput (keyup)="aplicarFiltro($event)" placeholder="Digite o código ou nome da moeda">
+  </mat-form-field>
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="codigo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Código da Moeda </mat-header-cell>
+      <mat-cell *matCellDef="let moeda"> {{ moeda.codigo }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nome da Moeda </mat-header-cell>
+      <mat-cell *matCellDef="let moeda"> {{ moeda.nome }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>

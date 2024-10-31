@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Conversor de Moedas</h2>
+  <br>
+  <div class="conversor-container">
+    <form (ngSubmit)="converter()">
+      <div class="form-group">
+        <div class="moedas-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Moeda de Origem</mat-label>
+            <mat-select [(ngModel)]="moedaOrigem" name="moedaOrigem">
+              <mat-option *ngFor="let moeda of moedas" [value]="moeda.code">{{ moeda.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Moeda de Destino</mat-label>
+            <mat-select [(ngModel)]="moedaDestino" name="moedaDestino">
+              <mat-option *ngFor="let moeda of moedas" [value]="moeda.code">{{ moeda.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="input-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Valor a Converter</mat-label>
+            <input matInput type="number" [(ngModel)]="valor" name="valor" placeholder="Digite o valor">
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit">Converter</button>
+        </div>
+      </div>
+    </form>
+
+    <div *ngIf="resultado !== null" class="resultado-container">
+      <p><strong>Valor Convertido:</strong> {{ resultado | number:'1.2-2' }}</p>
+      <p *ngIf="taxaDeCambio !== null"><strong>Taxa de Câmbio:</strong> {{ taxaDeCambio | number:'1.4-4' }}</p>
+    </div>
+
+    <div *ngIf="erro" class="error-container">
+      <p style="color: red;">{{ erro }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="navbar-background"></div>
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a class="brand-link" routerLink="/">
+        <i class="fas fa-coins"></i>
+        <span>Conversão de Moedas</span>
+      </a>
+    </div>
+    <ul class="navbar-menu" [class.active]="isMenuOpen">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <i class="fas fa-home"></i>
+          <span>Início</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/conversao" routerLinkActive="active">
+          <i class="fas fa-exchange-alt"></i>
+          <span>Conversão</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/lista-moedas" routerLinkActive="active">
+          <i class="fas fa-list"></i>
+          <span>Lista de Moedas</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/historico" routerLinkActive="active">
+          <i class="fas fa-history"></i>
+          <span>Histórico</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

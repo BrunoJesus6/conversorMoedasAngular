@@ -1,0 +1,58 @@
+.historico-container {
+    max-width: 1200px;
+    margin: 90px auto 2rem;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .historico-container button[color="warn"] {
+    margin-bottom: 1.5rem;
+  }
+  
+  .historico-container .mat-table {
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-top: 1.5rem;
+  }
+  
+  .historico-container .mat-header-cell {
+    background: var(--background-light);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 1rem 0.75rem;
+    white-space: nowrap;
+  }
+  
+  .historico-container .mat-cell {
+    color: var(--text-secondary);
+    padding: 0.75rem;
+  }
+  
+  .historico-container .mat-row:hover {
+    background: var(--background-light);
+  }
+  
+  .historico-container .mat-button {
+    min-width: unset;
+    padding: 0 8px;
+  }
+  
+  .historico-container .mat-button:hover {
+    background: rgba(229, 62, 62, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .historico-container {
+      padding: 1rem;
+    }
+  
+    .historico-container .mat-header-cell,
+    .historico-container .mat-cell {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.9rem;
+    }
+  }

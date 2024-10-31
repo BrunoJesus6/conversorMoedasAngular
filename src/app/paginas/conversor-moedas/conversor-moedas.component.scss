@@ -1,0 +1,77 @@
+::ng-deep .cdk-overlay-pane {
+  position: fixed !important;
+  transform: none !important;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 90px auto 2rem;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.conversor-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.moedas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.resultado-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--background-light);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.error-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(229, 62, 62, 0.1);
+  color: var(--error-color);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .conversor-container {
+    padding: 1.5rem;
+  }
+
+  .input-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

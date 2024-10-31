@@ -1,0 +1,54 @@
+<div class="historico-container">
+  <button mat-raised-button color="warn" (click)="limparHistorico()">
+    Limpar Histórico
+  </button>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef> Hora </th>
+      <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="valorEntrada">
+      <th mat-header-cell *matHeaderCellDef> Valor Entrada </th>
+      <td mat-cell *matCellDef="let element"> {{element.valorEntrada}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="moedaEntrada">
+      <th mat-header-cell *matHeaderCellDef> Moeda Entrada </th>
+      <td mat-cell *matCellDef="let element"> {{element.moedaEntrada}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="valorSaida">
+      <th mat-header-cell *matHeaderCellDef> Valor Saída </th>
+      <td mat-cell *matCellDef="let element"> {{element.valorSaida}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="moedaSaida">
+      <th mat-header-cell *matHeaderCellDef> Moeda Saída </th>
+      <td mat-cell *matCellDef="let element"> {{element.moedaSaida}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="taxa">
+      <th mat-header-cell *matHeaderCellDef> Taxa </th>
+      <td mat-cell *matCellDef="let element"> {{element.taxa}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <button mat-button color="warn" (click)="deletarConversao(i)">
+          Excluir
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
